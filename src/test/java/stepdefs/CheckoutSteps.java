@@ -6,10 +6,9 @@ import io.cucumber.java.en.When;
 
 public class CheckoutSteps {
 	
-	@Given("the price of a {string} is 40c")
-	public void the_price_of_a_is_40c(String string) {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+	@Given("^the price of a \"(.*?)\" is (\\d+)c$")
+	public void the_price_of_a_is_c(String name, int price) {
+	    int bananaPrice = price;
 	}
 
 	@When("I checkout {int} {string}")
