@@ -30,11 +30,11 @@ public class FruitSteps {
 	    // Double, Byte, Short, Long, BigInteger or BigDecimal.
 	    //
 	    // For other transformations you can register a DataTableType.
-		final Gson gson = new Gson();
-		final PrintWriter writer = new PrintWriter("fruit.json", "UTF-8");
-		final String json = gson.toJson(fruitList);
-		writer.println(json);
-		writer.close();
+
+		try (PrintWriter writer = new PrintWriter("fruit.json", "UTF-8")) {
+			writer.println(new Gson().toJson(fruitList));
+		}
+
 	}
 
 }
